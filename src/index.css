@@ -1,13 +1,90 @@
-body {
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  background-color: #F4F7FE;
+  color: #000; 
 }
+
+[data-theme='light'] {
+  .SideBar {
+    background-color: #fff;
+    color: #2B3674;
+  }
+
+  .SideBar .pages {
+    color: #A3AED0;
+  }
+
+  .route {
+    color: 	#707EAE;
+  }
+
+  .routeName {
+    color: #2B3674;
+  }
+}
+
+[data-theme='dark'] {
+    background-color: #0B1437; 
+    color: #fff;
+}
+
+[data-theme='dark'] {
+  .SideBar {
+    background-color: #111C44;
+    color: #fff;
+  }
+
+}
+
+body {
+  font-family: sans-serif;
+}
+
+
+/* :root {
+  --background-color: #F4F7FE;
+  --text-color: #000;
+  --sidebar-background-light: #fff;
+  --sidebar-color-light: #2B3674;
+  --sidebar-pages-color-light: #A3AED0;
+  --background-dark: #0B1437;
+  --text-color-dark: #fff;
+  --sidebar-background-dark: #111C44;
+  --sidebar-color-dark: #fff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+}
+
+.SideBar {
+  background-color: var(--sidebar-background-light);
+  color: var(--sidebar-color-light);
+}
+
+.SideBar .pages {
+  color: var(--sidebar-pages-color-light);
+}
+
+[data-theme='dark'] {
+  background-color: var(--background-dark);
+  color: var(--text-color-dark);
+  --sidebar-background-light: var(--sidebar-background-dark);
+  --sidebar-color-light: var(--sidebar-color-dark);
+  --sidebar-pages-color-light: var(--sidebar-color-dark);
+} */
