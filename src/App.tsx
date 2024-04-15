@@ -18,10 +18,10 @@ function App() {
 
   return (
     <div data-theme={theme} className=" flex">
-      <div className='w-[17%]'>
+      <div className='w-[15%]'>
         <div className='SideBar'><SideBar/></div>
       </div>
-      <div className='w-[83%] py-[30px] px-[20px]'>
+      <div className='w-[85%] py-[30px] px-[20px]'>
         <div className='flex justify-between'>
           <Title/>
           <Misc toggleTheme={toggleTheme} theme={theme} />
