@@ -1,25 +1,18 @@
 import React from 'react'
 import BarChartIcon from '@mui/icons-material/BarChart';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
-
-// import { Checkbox, Table } from "flowbite-react";
-import { Checkbox, Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
-import dots from "../assets/images/3-dots.png";
+import Piechart from '../component/Piechart';
+import ComplexTable from '../component/ComplexTable';
+import CheckTable from '../component/CheckTable';
+import Calender from '../component/Calender';
 
 import { ResponsiveBar } from '@nivo/bar'
-import { ResponsivePie } from "@nivo/pie";
-
-type PieChartData = {
-    id: string;
-    label: string;
-    value: number;
-    color: string;
-  };
-
 
 const Dashboard = () => {
+    
     const data = {
         labels: ['SEP', 'OCT', 'NOV', 'DEC', 'JAN', 'FEB'],
         datasets: [
@@ -142,27 +135,30 @@ const Dashboard = () => {
         }
       ];
 
-      const pieData = [
-        {
-            "id": "Your files",
-            "label": "Your files",
-            "value": 60,
-            "color": "#4318FF"
-        },
-        {
-            "id": "System",
-            "label": "System",
-            "value": 17,
-            "color": "#6AD2FF"
-        },
-        {
-            "id": "Free",
-            "label": "Free",
-            "value": 23,
-            "color": "#EFF4FB"
-        },
-      ];
+    const [tasks, setTasks] =  React.useState([
+        'Landing Page Design',
+        'Dashboard Builder',
+        'Mobile App Design',
+        'Illustrations',
+        'Promotional LP',
+    ])
 
+    const dragItem = React.useRef<any>(null)
+
+    const dragOverItem = React.useRef<any>(null)
+
+    const handleSort = () => {
+        let _tasks = [...tasks]
+
+        const draggedItemContent = _tasks.splice(dragItem.current, 1)[0]
+
+        _tasks.splice(dragOverItem.current, 0, draggedItemContent)
+
+        dragItem.current = null
+        dragOverItem.current = null
+
+        setTasks(_tasks)
+    }
 
 
   return (
@@ -304,55 +300,7 @@ const Dashboard = () => {
                 </div>
 
                 <div className="overflow-x-auto">
-
-                    <Table className=''>
-                        <TableHead className='text-[#A3AED0] font-normal text-[12px]'>
-                            <TableHeadCell className=' bg-transparent font-medium p1-[5px] px-0 pr-0'>Name</TableHeadCell>
-                            <TableHeadCell className=' bg-transparent font-medium'></TableHeadCell>
-                            <TableHeadCell className=' bg-transparent font-medium'>Progress</TableHeadCell>
-                            <TableHeadCell className=' bg-transparent font-medium'>Quantity</TableHeadCell>
-                            <TableHeadCell className=' bg-transparent font-medium'>Date</TableHeadCell>
-                        </TableHead>
-                        <TableBody className="divide-y text-[12px] font-bold text-black pt-2">
-                            <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800 border-none">
-                                <TableCell className="p-2"><Checkbox /></TableCell>
-                                <TableCell className="whitespace-nowrap text-gray-900 dark:text-white py-[2px] px-[20px]">
-                                Horizon UI PRO
-                                </TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>17.5%</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>2,458</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>24.Jan.2021</TableCell>
-                            </TableRow>
-                            <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                <TableCell className="p-2"><Checkbox /></TableCell>
-                                <TableCell className="whitespace-nowrap text-gray-900 dark:text-white py-[2px] px-[20px]">Horizon UI Free</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>10.8%</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>1,485</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>12.Jun.2021</TableCell>
-                            </TableRow>
-                            <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                <TableCell className="p-2"><Checkbox /></TableCell>
-                                <TableCell className="whitespace-nowrap text-gray-900 dark:text-white py-[2px] px-[20px]">Weekly Update</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>21.3%</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>1,024</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>5.Jan.2021</TableCell>
-                            </TableRow>
-                            <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                <TableCell className="p-2"><Checkbox /></TableCell>
-                                <TableCell className="whitespace-nowrap text-gray-900 dark:text-white py-[2px] px-[20px]">Venus 3D Assets</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>31.5%</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>858</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>7.Mar.2021</TableCell>
-                            </TableRow>
-                            <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                <TableCell className="p-2"><Checkbox /></TableCell>
-                                <TableCell className="whitespace-nowrap text-gray-900 dark:text-white py-[2px] px-[20px]">Marketplace</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>12.2%</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>258</TableCell>
-                                <TableCell className='py-[2px] px-[20px]'>17.Dec.2021</TableCell>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
+                    <CheckTable/>
                 </div>
             </div>
 
@@ -442,31 +390,8 @@ const Dashboard = () => {
                         </div>
                     </header>
 
-                    <div className='h-[65%] p-4'>
-                        <ResponsivePie
-                            data={pieData}
-                            margin={{ top: 0, right: 1, bottom: 1, left: 1 }}
-                            innerRadius={0}
-                            padAngle={0.7}
-                            cornerRadius={0}
-                            activeOuterRadiusOffset={8}
-                            colors={{ datum: 'data.color' }}
-                            borderWidth={1}
-                            borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
-                            enableArcLinkLabels={false}
-                            arcLabelsSkipAngle={10}
-                            arcLabelsTextColor="transparent"
-                        />
-                    </div>
-
-                    <div className="legend flex p-2 justify-between mx-[20px] shadow-sm rounded-[15px]">
-                        {pieData.map((item: PieChartData, index: number) => (
-                            <div className="legend-item " key={index}>
-                                <span className="color-box" style={{ background: item.color }}></span>
-                                <p className="label text-[12px] font-medium text-[#A3AED0]">{item.label}</p>
-                                <p className="percentage text-[18px] font-bold flex justify-center">{item.value}%</p>
-                            </div>
-                        ))}
+                    <div className='h-[100%] p-4'>
+                        <Piechart/>
                     </div>
                 </div>
             </div>
@@ -481,24 +406,47 @@ const Dashboard = () => {
                     <div className='flex items-top text-[#4318FF] bg-[#F4F7FE] rounded-[7px]'><MoreHorizIcon/></div>
                 </div>
                 <div>
-                    <Table>
-                        <TableHead>
-                            <TableHeadCell>Name</TableHeadCell>
-                            <TableHeadCell>Status</TableHeadCell>
-                            <TableHeadCell>Date</TableHeadCell>
-                            <TableHeadCell>Progress</TableHeadCell>
-                        </TableHead>
-                        <TableBody>
-                            <TableRow>Horizon UI PRO</TableRow>
-                            <TableRow>Horizon UI Free</TableRow>
-                            <TableRow>Marketplace</TableRow>
-                            <TableRow>Weekly Updates</TableRow>
-                        </TableBody>
-                    </Table>
+                    <ComplexTable/>
                 </div>
             </div>
-            <div className='w-[50%] p-[20px] rounded-[20px] ml-[10px]'>
-
+            <div className='w-[50%] rounded-[20px] ml-[10px] flex'>
+                <div className=' bg-white rounded-[20px] w-[50%] mr-[10px] p-[20px]'>
+                    <div className='flex justify-between'>
+                        <div className='flex'>
+                            <div className=' items-center'><input type="checkbox" style={{background: '#F4F7FE', width: '14px', height: '14px'}} /></div>
+                            <h1 className='text-[16px] text-[#2B3674] pt-[2px] pl-[20px] font-bold'>Tasks</h1>
+                        </div>
+                        <div>
+                            <div className='flex items-top text-[#4318FF] bg-[#F4F7FE] rounded-[7px]'><MoreHorizIcon/></div>
+                        </div>
+                    </div>
+                    <div className='pt-[20px]'>
+                        { 
+                            tasks.map ((item, index) => (
+                                <div 
+                                    key={index} 
+                                    className='flex justify-between items-center h-[100%] py-[4px] cursor-move'
+                                    draggable
+                                    onDragStart={(e) => (dragItem.current = index)}
+                                    onDragEnter={(e) => (dragOverItem.current = index)}
+                                    onDragEnd={handleSort}
+                                    onDragOver={(e) => e.preventDefault}
+                                >
+                                    <div className='flex items-center'>
+                                        <input type="checkbox" style={{borderColor: '#A3AED0', borderWidth: '2px', borderRadius: '2px', width: '12px', height: '12px'}}/>
+                                        <p className='text-[14px] font-medium pl-[15px] text-[#A3AED0]'>{item}</p>
+                                    </div>
+                                    <div className='text-[#B0BBD5]'><DragIndicatorIcon/></div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+                <div className=' bg-white rounded-[20px] w-[50%] ml-[10px] p-[20px]'>
+                        <div>
+                           <Calender/>
+                        </div>
+                </div>
             </div>
 
         </div>
