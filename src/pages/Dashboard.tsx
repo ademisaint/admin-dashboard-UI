@@ -4,6 +4,8 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import FingerprintIcon from '@mui/icons-material/Fingerprint';
+import FastfoodIcon from '@mui/icons-material/Fastfood';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 import Piechart from '../component/Piechart';
@@ -20,6 +22,8 @@ import avatar4 from '../assets/images/Avatar 4.png'
 import teamM1 from '../assets/images/teamM1.png'
 import teamM2 from '../assets/images/teamM2.png'
 import teamM3 from '../assets/images/teamM3.png'
+import starbucksbg from '../assets/images/starbucks Background.png'
+import starbucksLogo from '../assets/images/starbucks logo.png'
 
 
 import { ResponsiveBar } from '@nivo/bar';
@@ -262,7 +266,7 @@ const Dashboard = () => {
 
             <div className='w-[50%] p-[25px] bg-white rounded-[20px] ml-[10px]'>
                 <div className='flex justify-between'>
-                    <p>Weekly Revenue</p>
+                    <p className='text-[20px] font-bold text-[#1B2559]'>Weekly Revenue</p>
                     <div>
                         <BarChartIcon htmlColor='#4318FF' className='bg-[#F4F7FE] rounded-[5px]'/>
                     </div>
@@ -508,13 +512,13 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className='w-[50%] mr-[5px] bg-white rounded-[20px] p-[20px]'>
+                <div className='w-[50%] ml-[5px] bg-white rounded-[20px] p-[20px]'>
                     <div className='flex justify-between items-center pb-[10px] pt-[5px]'>
                         <h1 className='text-[#2B3674] text-[16px] font-bold'>Team members</h1>
                         <div className='bg-[#F4F7FE] text-[#4318FF] w-[37px] h-[37px] rounded-[10px] flex items-center justify-center'><AddCircleIcon/></div>
                     </div>
-                    <div>
-                        <div className='flex justify-between items-center'>
+                    <div className='pt-[20px] flex-col'>
+                        <div className='flex justify-between items-center p-2 rounded-[16px] shadow-sm mb-[7px]'>
                             <div className='flex'>
                                 <img src={teamM1} alt="avatar1" />
                                 <div>
@@ -524,7 +528,7 @@ const Dashboard = () => {
                             </div>
                             <div className='text-[#A3AED0]'><MoreVertIcon/></div>
                         </div>
-                        <div className='flex justify-between items-center'>
+                        <div className='flex justify-between items-center p-2 rounded-[16px] shadow-sm mb-[7px]'>
                             <div className='flex'>
                                 <img src={teamM2} alt="avatar2" />
                                 <div>
@@ -534,7 +538,7 @@ const Dashboard = () => {
                             </div>
                             <div className='text-[#A3AED0]'><MoreVertIcon/></div>
                         </div>
-                        <div className='flex justify-between'>
+                        <div className='flex justify-between items-center p-2 rounded-[16px] shadow-sm'>
                             <div className='flex'>
                                 <img src={teamM3} alt="avatar3" />
                                 <div>
@@ -548,8 +552,30 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <div className='w-[50%] mr-[10px] flex'>
-                
+            <div className='w-[50%] ml-[10px] flex'>
+                <div className='w-[50%] mr-[5px] bg-white rounded-[20px] p-[20px]'>
+                    <div className='w-[91px] h-[91px] text-[#4318FF]'><FingerprintIcon sx={{ fontSize: 90 }}/></div>
+                    <div className='py-[20px]'>
+                        <h1 className='text-[24px] font-bold text-[#2B3674]'>Control card security in-app with a tap</h1>
+                        <p className='text-[14px] font-medium text-[#A3AED0] py-[10px]'>Discover our cards benefits with one tap.</p>
+                    </div>
+                    <div className=''>
+                        <button className='bg-[#4318FF] rounded-[16px] text-white w-[100%] py-[7px]'>Cards</button>
+                    </div>
+                </div>
+
+                <div className='w-[50%] ml-[5px] bg-white rounded-[20px] p-[20px]'>
+                    <div>
+                        <img src={starbucksbg} alt="starbucks-bg" />
+                    </div>
+                    <div className='mt-[-30px] w-[60px] h-[60px] p-1 ml-2'>
+                        <img src={starbucksLogo} alt="logo" />
+                    </div>
+                    <div className='pt-[20px]'>
+                        <h1 className='font-bold text-[24px] text-[#2B3674]'>Starbucks</h1>
+                        <p className='text-[#A3AED0] flex items-center pt-[10px]'><FastfoodIcon/> <span className='text-[18px] font-medium pl-[5px] flex items-center'> 10% cashback & off</span></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

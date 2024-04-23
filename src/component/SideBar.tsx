@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import BarChartIcon from '@mui/icons-material/BarChart';
@@ -16,27 +17,27 @@ const SideBar = () => {
       <div className='pages font-dmsans py-[40px]'>
         <div className='flex items-center py-[10px]'>
           <HomeIcon fontSize="small"/>
-          <p className='text-[16px] pl-[15px]'>Dashboard</p>
+          <p className='text-[16px] pl-[15px]'><Link to="/Dashboard">Dashboard</Link></p>
         </div>
         <div className='flex items-center py-[10px]'>
           <ShoppingCartIcon fontSize="small"/>
-          <p className='text-[16px] pl-[15px]'>NFT Marketplace</p>
+          <p className='text-[16px] pl-[15px]'><Link to="/MarketPlace">NFT Marketplace</Link></p>
         </div>
         <div className='flex items-center py-[10px]'>
           <BarChartIcon fontSize="small"/>
-          <p className='text-[16px] pl-[15px]'>Tables</p>
+          <p className='text-[16px] pl-[15px]'><Link to="/Tables">Tables</Link></p>
         </div>
         <div className='flex items-center py-[10px]'>
           <DashboardIcon fontSize="small"/>
-          <p className='text-[16px] pl-[15px]'>Kanban</p>
+          <p className='text-[16px] pl-[15px]'><Link to="/Kanban">Kanban</Link></p>
         </div>
         <div className='flex items-center py-[10px]'>
           <PersonIcon fontSize="small"/>
-          <p className='text-[16px] pl-[15px]'>Profile</p>
+          <p className='text-[16px] pl-[15px]'><Link to="/Profile">Profile</Link></p>
         </div>
         <div className='flex items-center py-[10px]'>
           <LockIcon fontSize="small"/>
-          <p className='text-[16px] pl-[15px]'>Sign In</p>
+          <p className='text-[16px] pl-[15px]'><Link to="/SignIn">Sign In</Link></p>
         </div>
       </div>
     </div>
