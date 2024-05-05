@@ -10,14 +10,14 @@ const Histories = () => {
         </div>
         <div>
             {NftData.map(nft => (
-                <div key={nft.id} className='flex justify-between items-center hover:shadow-md p-[10px]'>
-                    <img src={nft.imgSrc} alt={nft.imgAlt} className="w-16 h-16 rounded-[12px]" />
+                <div key={nft.id} className='flex justify-between items-center hover:shadow-md p-[10px] rounded-[20px]'>
+                    <img src={nft.imgSrc} alt={nft.imgAlt} className="w-14 h-14 rounded-[12px]" />
                     <div>
                         <h1 className='font-bold text-[14px] text-[#1B2559]'>{nft.title}</h1>
                         <p className=' font-normal text-[12px] text-[#A3AED0]'>{nft.author}</p>
                     </div>
                     <div>
-                        <p className='font-bold text-[14px] text-[#2B3674]'>{nft.currentBid}</p>
+                        <p className='font-bold text-[14px] text-[#2B3674]'>{nft.currentBid} ETH</p>
                     </div>
                     <div>
                         <p className='font-normal text-[14px] text-[#A3AED0]'>{nft.time}</p>

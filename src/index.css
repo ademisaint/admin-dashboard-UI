@@ -53,6 +53,10 @@ body {
   font-family: sans-serif;
 }
 
+input[type="checkbox"] {
+  color: #4318FF;
+}
+
 /* calendar component */
 
 .react-calendar { 
@@ -145,6 +149,16 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
+ }
+
+ /* sign-In */
+ .signIn { 
+  background: url('../src/assets/images/signIn-Bg.png');
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 200px;
+  background-position: top right;
+  background-size: cover;
+  min-height: 100vh;
  }
 
 

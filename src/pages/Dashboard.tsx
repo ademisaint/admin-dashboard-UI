@@ -28,7 +28,11 @@ import starbucksLogo from '../assets/images/starbucks logo.png'
 
 import { ResponsiveBar } from '@nivo/bar';
 
-const Dashboard = () => {
+interface DashboardProps {
+    theme: string; // Assuming theme is a string
+  }
+
+const Dashboard : React.FC<DashboardProps> = ({ theme }) => {
     
     const data = {
         labels: ['SEP', 'OCT', 'NOV', 'DEC', 'JAN', 'FEB'],
