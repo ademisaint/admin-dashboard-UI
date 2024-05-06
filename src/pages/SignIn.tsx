@@ -1,8 +1,16 @@
 import React from 'react'
 import google from '../assets/images/search.png'
 import horizonUI from '../assets/images/horizonUI.png'
+// import { useLocation } from 'react-router-dom'
+
 
 const SignIn = () => {
+  // const location = useLocation();
+
+  // if (location.pathname === '/signIn') {
+  //   return null; // Don't render anything if the path is /signIn
+  // }
+
   return (
     <div className='flex justify-end bg-white font-dmsans'>
       <div className='w-[50%] flex justify-around p-[30px]'>

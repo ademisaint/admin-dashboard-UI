@@ -57,6 +57,12 @@ input[type="checkbox"] {
   color: #4318FF;
 }
 
+input[type='checkbox'] :focus{
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
 /* calendar component */
 
 .react-calendar { 

@@ -7,7 +7,7 @@ import card4 from '../assets/images/card4.png'
 import card5 from '../assets/images/card5.png'
 import card6 from '../assets/images/card6.png'
 import CreatorsTable from '../component/CreatorsTable';
-import NftData from '../data/NftData';
+// import NftData from '../data/NftData';
 import Histories from '../component/Histories';
 
 const MarketPlace = () => {

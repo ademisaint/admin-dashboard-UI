@@ -1,3 +1,4 @@
+
 import React from 'react'
 import './index.css';
 import SideBar from './component/SideBar';
@@ -10,56 +11,43 @@ import Tables from './pages/Tables';
 import Kanban from './pages/Kanban';
 import Profile from './pages/Profile';
 import SignIn from './pages/SignIn';
-import { BrowserRouter as Router, Route, Link, Routes, BrowserRouter} from "react-router-dom";
-import { useLocation } from 'react-router-dom';
-
-interface AppContentProps {
-  toggleTheme: () => void; // Assuming toggleTheme does not take any argument
-  theme: string;            // Assuming theme is a string
-}
+import { BrowserRouter as Router, Route, Link, Routes, BrowserRouter } from "react-router-dom";
 
 function App() {
   const [theme, setTheme] = useLocalStorage<string>('theme', 'dark');
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-  };
+    const newTheme = (theme === 'dark' ? 'light' : 'dark');
+    setTheme(newTheme)
+  }
+
+  console.log(theme)
 
   return (
     <Router>
-      <AppContent toggleTheme={toggleTheme} theme={theme} />
-    </Router>
-  );
-}
-
-const AppContent: React.FC<AppContentProps> = ({ toggleTheme, theme }) => {
-  const location = useLocation();
-
-  return (
-    <div data-theme={theme} className="flex">
-      {location.pathname !== "/SignIn" && (
+      <div data-theme={theme} className="flex">
         <div className='w-[15%]'>
-          <SideBar />
+          <div className='SideBar fixed'><SideBar/></div>
         </div>
-      )}
-      <div className={`w-${location.pathname !== "/SignIn" ? '[85%]' : '[100%]'} py-${location.pathname !== "/SignIn" ? '[30px]' : '[0px]'} px-${location.pathname !== "/SignIn" ? '[20px]' : '[0px]'}`}>
-        <div className='flex justify-between'>
-          {location.pathname !== "/SignIn" && <Title />}
-          {/* <Misc toggleTheme={toggleTheme} theme={theme} /> */}
-          {location.pathname !== "/SignIn" && <Misc toggleTheme={toggleTheme} theme={theme} />}
+        <div className='w-[85%] py-[30px] px-[20px]'>
+          <div className='flex justify-between'>
+            <Title/>
+            <Misc toggleTheme={toggleTheme} theme={theme} />
+          </div>
+          <div>
+            <Routes>
+              <Route index element={<Dashboard />} />
+              <Route path="/Dashboard" element={<Dashboard />} /> 
+              <Route path="/MarketPlace" element={<MarketPlace />} /> 
+              <Route path="/Tables" element={<Tables/>}/> 
+              <Route path="/Kanban" element={<Kanban/>}/> 
+              <Route path="/Profile" element={<Profile/>}/> 
+              <Route path="/SignIn" element={<SignIn/>}/> 
+            </Routes>
+          </div>
         </div>
-        <Routes>
-          <Route path="/" element={<Dashboard theme={theme} />} />
-          <Route path="/Dashboard" element={<Dashboard theme={theme}/>} />
-          <Route path="/MarketPlace" element={<MarketPlace />} />
-          <Route path="/Tables" element={<Tables />} />
-          <Route path="/Kanban" element={<Kanban />} />
-          <Route path="/Profile" element={<Profile />} />
-          <Route path="/SignIn" element={<SignIn />} />
-        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 

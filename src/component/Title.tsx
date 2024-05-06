@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -7,6 +8,11 @@ import { useLocation } from 'react-router-dom';
 
 const Title = () => {
   const location = useLocation();
+
+  if (location.pathname === '/SignIn') {
+    return null; // Don't render anything if the path is /signIn
+  }
+
   const pageNames: { [key: string]: string } = {
     '/': 'Main Dashboard', // Add more route paths and their corresponding page names
     '/Dashboard': 'Main Dashboard',

@@ -32,7 +32,7 @@ interface DashboardProps {
     theme: string; // Assuming theme is a string
   }
 
-const Dashboard : React.FC<DashboardProps> = ({ theme }) => {
+const Dashboard = () => {
     
     const data = {
         labels: ['SEP', 'OCT', 'NOV', 'DEC', 'JAN', 'FEB'],
@@ -250,7 +250,7 @@ const Dashboard : React.FC<DashboardProps> = ({ theme }) => {
         <div className='flex justify-between my-[20px]'>
             <div className='w-[50%] p-[25px] bg-white rounded-[20px] mr-[10px]'>
                 <div className='flex justify-between'>
-                    <p>This month</p>
+                    <p className=''>This month</p>
                     <div>
                         <BarChartIcon htmlColor='#4318FF' className='bg-[#F4F7FE] rounded-[5px]'/>
                     </div>

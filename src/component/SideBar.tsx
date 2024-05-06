@@ -6,8 +6,21 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonIcon from '@mui/icons-material/Person';
 import LockIcon from '@mui/icons-material/Lock';
+import { useLocation } from 'react-router-dom';
+
+interface DashboardProps {
+  theme: string; // Assuming theme is a string
+}
 
 const SideBar = () => {
+  const location = useLocation()
+
+  console.log(location)
+  
+  if (location.pathname === '/SignIn') {
+    return null; 
+  }
+
   return (
     <div>
     <div className=' p-[30px]'>
