@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BarChartIcon from '@mui/icons-material/BarChart';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 import Piechart from '../component/Piechart';
@@ -24,6 +27,7 @@ import teamM2 from '../assets/images/teamM2.png'
 import teamM3 from '../assets/images/teamM3.png'
 import starbucksbg from '../assets/images/starbucks Background.png'
 import starbucksLogo from '../assets/images/starbucks logo.png'
+import ReactFlagsSelect from "react-flags-select";
 
 
 import { ResponsiveBar } from '@nivo/bar';
@@ -33,6 +37,37 @@ interface DashboardProps {
   }
 
 const Dashboard = () => {
+    // const [selected, setSelected] = useState("");
+
+    const currencyMap: { [key: string]: string } = {
+        US: '$', // United States
+        GB: '£', // United Kingdom
+        EU: '€', // Eurozone
+        JP: '¥', // Japan
+        CN: '¥', // China
+        IN: '₹', // India
+        AU: '$', // Australia
+        CA: '$', // Canada
+        // MX: 'Mex$', // Mexico
+        // BR: 'R$', // Brazil
+        // RU: '₽', // Russia
+        // SA: '﷼', // Saudi Arabia
+        // ZA: 'R', // South Africa
+        NG: '₦', // Nigeria
+        // KE: 'KSh', // Kenya
+        // EG: 'E£', // Egypt
+        // AR: 'ARS$', // Argentina
+        // CL: 'CLP$', // Chile
+      };
+
+    const [selected, setSelected] = useState("US");
+  const [currency, setCurrency] = useState(currencyMap[selected]);
+
+  const handleSelect = (code: string) => {
+    setSelected(code);
+    setCurrency(currencyMap[code]);
+  };
+
     
     const data = {
         labels: ['SEP', 'OCT', 'NOV', 'DEC', 'JAN', 'FEB'],
@@ -65,18 +100,23 @@ const Dashboard = () => {
           },
         },
         scales: {
-            x: {
+            x: {  // X-axis configuration
                 grid: {
-                  display: false, 
+                  display: false,  // Hides grid lines for the X-axis
+                  drawBorder: false,  // This removes the X-axis line
                 },
+                ticks: {
+                  display: true,  // Ensures that the labels are still displayed
+                }
               },
           
-          y: {
-            beginAtZero: true,
-            grid: {
-                display: false, 
-              },
-          },
+            y: {
+                // beginAtZero: true,
+                // grid: {
+                //     display: false, 
+                //   },
+                display: false,
+            },
         },
       };
 
@@ -187,46 +227,55 @@ const Dashboard = () => {
 
         <div className='flex justify-between'>
 
-            <div className='small flex items-center rounded-[20px] bg-white px-[20px] py-[10px] w-[190px]'>
-                <div className='flex items-center '>
+            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+                <div className='flex items-center pr-[10px]'>
                     <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/>
                 </div>
                 <div className='pl-[7.6px]'>
                     <p className='text-[12px] text-[hsl(225,32%,73%)]'>Earnings</p>
-                    <h1 className='text-[#2B3674] font-bold text-[20px]'>$350.4</h1>
+                    <h1 className='text-[#2B3674] font-bold text-[20px]'>{currency}350.4</h1>
                 </div>
             </div>
 
-            <div className='small flex items-center rounded-[20px] bg-white px-[20px] py-[10px] w-[190px]'>
-                <div className='flex items-center '>
-                    <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/>
+            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+                <div className='flex items-center pr-[10px]'>
+                    <AttachMoneyIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/>
                 </div>
                 <div className='pl-[7.6px]'>
-                    <p className='text-[12px] text-[#A3AED0]'>Spend this month</p>
-                    <h1 className='text-[#2B3674] font-bold text-[20px]'>$642.39</h1>
+                    <p className='text-[12px] text-[#A3AED0] font-medium'>Spend this month</p>
+                    <h1 className='text-[#2B3674] font-bold text-[20px]'>{currency}642.39</h1>
                 </div>
             </div>
 
-            <div className='small flex items-center rounded-[20px] bg-white px-[20px] py-[10px] w-[190px]'>
-                <div className='pl-[7.6px]'>
+            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+                <div className='pl-[7.6px]pr-[10px]'>
                     <p className='text-[12px] text-[#A3AED0]'>Sales</p>
-                    <h2 className='text-[#2B3674] font-bold text-[20px]'>$574.34</h2>
-                    <p className='text-[10px]'>+23% since last month</p>
+                    <h2 className='text-[#2B3674] font-bold text-[20px]'>{currency}574.34</h2>
+                    <p className='text-[10px] text-[#A3AED0] font-normal'><span className='text-[#05CD99] font-bold'>+23%</span> since last month</p>
                 </div>
             </div>
 
-            <div className='small flex items-center rounded-[20px] bg-white px-[20px] py-[10px] w-[190px]'>
-                <div className='pl-[7.6px]'>
+            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+                <div className='pl-[7.6px]pr-[10px]'>
                     <p className='text-[12px] text-[#A3AED0]'>Your balance</p>
-                    <h1 className='text-[#2B3674] font-bold text-[20px]'>$1,000</h1>
+                    <h1 className='text-[#2B3674] font-bold text-[20px]'>{currency}1,000</h1>
                 </div>
                 <div className='flex items-center '>
-                    <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/>
+                    {/* <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/> */}
+                    <ReactFlagsSelect
+                        selected={selected}
+                        onSelect={handleSelect}
+                        countries={["US", "GB", "EU", "JP", "CN", "IN", "AU", "CA", "NG"]}
+                        showSelectedLabel={false}
+                        showOptionLabel= {true}
+                        // selectedSize={25}
+                        className="rounded-full border-none"
+                    />
                 </div>
             </div>
 
-            <div className='small flex items-center rounded-[20px] bg-white px-[20px] py-[10px] w-[190px]'>
-                <div className='flex items-center '>
+            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+                <div className='flex items-center pr-[10px]'>
                     <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/>
                 </div>
                 <div className='pl-[7.6px]'>
@@ -235,8 +284,8 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <div className='small flex items-center rounded-[20px] bg-white px-[20px] py-[10px] w-[190px]'>
-                <div className='flex items-center '>
+            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+                <div className='flex items-center pr-[10px]'>
                     <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/>
                 </div>
                 <div className='pl-[7.6px]'>
@@ -250,18 +299,18 @@ const Dashboard = () => {
         <div className='flex justify-between my-[20px]'>
             <div className='w-[50%] p-[25px] bg-white rounded-[20px] mr-[10px]'>
                 <div className='flex justify-between'>
-                    <p className=''>This month</p>
+                    <p className='text-[14px] flex items-center text-[#A3AED0] font-medium bg-[#F4F7FE] p-[10px] rounded-[7px]'><CalendarTodayIcon htmlColor='#A3AED0' fontSize='small'/>This month</p>
                     <div>
                         <BarChartIcon htmlColor='#4318FF' className='bg-[#F4F7FE] rounded-[5px]'/>
                     </div>
                 </div>
 
                 <div className='flex justify-between'>
-                    <div className='w-[20%]'>
-                        <h1 className='font-bold text-[22px]'>$37.5K</h1>
-                        <p>Total Spent <span>+2.45%</span></p>
-                        <div>
-                            <span className="indicator">• On track</span>
+                    <div className='w-[20%] pt-[25px]'>
+                        <h1 className='font-bold text-[22px]'>{currency}37.5K</h1>
+                        <p className='text-[12px] text-[#A3AED0] pt-[5px]'>Total Spent <span className='text-[12px] font-bold text-[#05CD99]'>+2.45%</span></p>
+                        <div className='mt-[10px]'>
+                            <p className="indicator text-[16px] font-bold text-[#05CD99]"><span><CheckCircleIcon htmlColor='#05CD99' fontSize='small'/></span> On track</p>
                         </div>
                     </div>
                     <div className='w-[80%]'><Line data={data} options={options} width={530} height={275}/></div>
