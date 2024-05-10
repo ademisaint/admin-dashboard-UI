@@ -54,7 +54,7 @@
 // export default App;
 
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
 import Dashboard from './pages/Dashboard';
@@ -72,6 +72,10 @@ function App() {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
   };
+
+  useEffect(() => {
+    document.body.className = theme === 'dark' ? 'dark' : '';
+  }, [theme]);
 
   return (
     <Router>

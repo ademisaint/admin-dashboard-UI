@@ -227,38 +227,38 @@ const Dashboard = () => {
 
         <div className='flex justify-between'>
 
-            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+            <div className='small flex items-center rounded-[15px] bg-white dark:bg-[#111C44] px-[20px] py-[10px] w-[190px]'>
                 <div className='flex items-center pr-[10px]'>
-                    <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/>
+                    <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] dark:bg-[#1B254B] dark:text-[#fff] rounded-[20px]'/>
                 </div>
                 <div className='pl-[7.6px]'>
-                    <p className='text-[12px] text-[hsl(225,32%,73%)]'>Earnings</p>
-                    <h1 className='text-[#2B3674] font-bold text-[20px]'>{currency}350.4</h1>
+                    <p className='text-[12px] text-[hsl(225,32%,73%)] dark:text-[#A3AED0]'>Earnings</p>
+                    <h1 className='text-[#2B3674] dark:text-[#fff] font-bold text-[20px]'>{currency}350.4</h1>
                 </div>
             </div>
 
-            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+            <div className='small flex items-center rounded-[15px] bg-white dark:bg-[#111C44] px-[20px] py-[10px] w-[190px]'>
                 <div className='flex items-center pr-[10px]'>
-                    <AttachMoneyIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/>
+                    <AttachMoneyIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] dark:bg-[#1B254B] dark:text-[#fff] rounded-[20px]'/>
                 </div>
                 <div className='pl-[7.6px]'>
                     <p className='text-[12px] text-[#A3AED0] font-medium'>Spend this month</p>
-                    <h1 className='text-[#2B3674] font-bold text-[20px]'>{currency}642.39</h1>
+                    <h1 className='text-[#2B3674] dark:text-[#fff] font-bold text-[20px]'>{currency}642.39</h1>
                 </div>
             </div>
 
-            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+            <div className='small flex items-center rounded-[15px] bg-white dark:bg-[#111C44] px-[20px] py-[10px] w-[190px]'>
                 <div className='pl-[7.6px]pr-[10px]'>
                     <p className='text-[12px] text-[#A3AED0]'>Sales</p>
-                    <h2 className='text-[#2B3674] font-bold text-[20px]'>{currency}574.34</h2>
+                    <h2 className='text-[#2B3674] dark:text-[#fff] font-bold text-[20px]'>{currency}574.34</h2>
                     <p className='text-[10px] text-[#A3AED0] font-normal'><span className='text-[#05CD99] font-bold'>+23%</span> since last month</p>
                 </div>
             </div>
 
-            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+            <div className='small flex items-center rounded-[15px] bg-white dark:bg-[#111C44] px-[20px] py-[10px] w-[190px]'>
                 <div className='pl-[7.6px]pr-[10px]'>
                     <p className='text-[12px] text-[#A3AED0]'>Your balance</p>
-                    <h1 className='text-[#2B3674] font-bold text-[20px]'>{currency}1,000</h1>
+                    <h1 className='text-[#2B3674] dark:text-[#fff] font-bold text-[20px]'>{currency}1,000</h1>
                 </div>
                 <div className='flex items-center '>
                     {/* <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/> */}
@@ -268,40 +268,41 @@ const Dashboard = () => {
                         countries={["US", "GB", "EU", "JP", "CN", "IN", "AU", "CA", "NG"]}
                         showSelectedLabel={false}
                         showOptionLabel= {true}
-                        // selectedSize={25}
-                        className="rounded-full border-none"
+                        selectedSize={25}
+                        // selectButtonClassName='custom-flag-select'
+                        // selectedSize={50}
                     />
                 </div>
             </div>
 
-            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+            <div className='small flex items-center rounded-[15px] bg-white dark:bg-[#111C44] px-[20px] py-[10px] w-[190px]'>
                 <div className='flex items-center pr-[10px]'>
-                    <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/>
+                    <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] dark:bg-[#1B254B] dark:text-[#fff] rounded-[20px]'/>
                 </div>
                 <div className='pl-[7.6px]'>
                     <p className='text-[12px] text-[#A3AED0]'>New Tasks</p>
-                    <h1 className='text-[#2B3674] font-bold text-[20px]'>154</h1>
+                    <h1 className='text-[#2B3674] dark:text-[#fff] font-bold text-[20px]'>154</h1>
                 </div>
             </div>
 
-            <div className='small flex items-center rounded-[15px] bg-white px-[20px] py-[10px] w-[190px]'>
+            <div className='small flex items-center rounded-[15px] bg-white dark:bg-[#111C44] px-[20px] py-[10px] w-[190px]'>
                 <div className='flex items-center pr-[10px]'>
-                    <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] rounded-[20px]'/>
+                    <BarChartIcon htmlColor='#4318FF' fontSize='large' className='bg-[#F4F7FE] dark:bg-[#1B254B] dark:text-[#fff] rounded-[20px]'/>
                 </div>
                 <div className='pl-[7.6px]'>
                     <p className='text-[12px] text-[#A3AED0]'>Total Projects</p>
-                    <h1 className='text-[#2B3674] font-bold text-[20px]'>2935</h1>
+                    <h1 className='text-[#2B3674] dark:text-[#fff] font-bold text-[20px]'>2935</h1>
                 </div>
             </div>
             
         </div>
 
         <div className='flex justify-between my-[20px]'>
-            <div className='w-[50%] p-[25px] bg-white rounded-[20px] mr-[10px]'>
+            <div className='w-[50%] p-[25px] bg-white dark:bg-[#111C44] rounded-[20px] mr-[10px]'>
                 <div className='flex justify-between'>
-                    <p className='text-[14px] flex items-center text-[#A3AED0] font-medium bg-[#F4F7FE] p-[10px] rounded-[7px]'><CalendarTodayIcon htmlColor='#A3AED0' fontSize='small'/>This month</p>
+                    <p className='text-[14px] flex items-center text-[#A3AED0] dark:text-[#fff] font-medium bg-[#F4F7FE] dark:bg-[#1B254B] p-[10px] rounded-[7px]'><CalendarTodayIcon htmlColor='#A3AED0' className=' dark:text-white' fontSize='small'/>This month</p>
                     <div>
-                        <BarChartIcon htmlColor='#4318FF' className='bg-[#F4F7FE] rounded-[5px]'/>
+                        <BarChartIcon htmlColor='#4318FF' className='bg-[#F4F7FE] dark:bg-[#1B254B] dark:text-[#fff] rounded-[5px]'/>
                     </div>
                 </div>
 
@@ -317,11 +318,11 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <div className='w-[50%] p-[25px] bg-white rounded-[20px] ml-[10px]'>
+            <div className='w-[50%] p-[25px] bg-white dark:bg-[#111C44] rounded-[20px] ml-[10px]'>
                 <div className='flex justify-between'>
-                    <p className='text-[20px] font-bold text-[#1B2559]'>Weekly Revenue</p>
+                    <p className='text-[20px] font-bold text-[#1B2559] dark:text-[#fff]'>Weekly Revenue</p>
                     <div>
-                        <BarChartIcon htmlColor='#4318FF' className='bg-[#F4F7FE] rounded-[5px]'/>
+                        <BarChartIcon htmlColor='#4318FF' className='bg-[#F4F7FE] dark:bg-[#1B254B] dark:text-[#fff] rounded-[5px]'/>
                     </div>
                 </div>
 
@@ -363,10 +364,10 @@ const Dashboard = () => {
         </div>
 
         <div className='flex justify-between my-[20px] h-[100%]'>
-            <div className='w-[50%] p-[20px] bg-white rounded-[20px] mr-[10px]'>
+            <div className='w-[50%] p-[20px] bg-white dark:bg-[#111C44] rounded-[20px] mr-[10px]'>
                 <div className='flex justify-between pb-[15px] items-center'>
-                    <h1 className='font-bold text-[20px] text-[#2B3674]'>Check Table</h1>
-                    <div className='flex items-top text-[#4318FF] bg-[#F4F7FE] rounded-[7px]'><MoreHorizIcon/></div>
+                    <h1 className='font-bold text-[20px] text-[#2B3674] dark:text-[#fff]'>Check Table</h1>
+                    <div className='flex items-top text-[#4318FF] bg-[#F4F7FE] rounded-[7px]'><MoreHorizIcon className='dark:bg-[#1B254B] dark:text-[#fff]'/></div>
                 </div>
 
                 <div className="overflow-x-auto">
@@ -375,7 +376,7 @@ const Dashboard = () => {
             </div>
 
             <div className='w-[50%] ml-[10px] flex h-[100%]'>
-                <div className='bg-white rounded-[20px] w-[50%] mr-[10px] p-[20px]'>
+                <div className='bg-white dark:bg-[#111C44] rounded-[20px] w-[50%] mr-[10px] p-[20px]'>
                     <header className="card-header flex justify-between">
                         <h1 className='text-[14px] text-[#A3AED0] font-medium'>Daily Traffic</h1>
                         <span className="traffic-change text-[#05CD99] text-[12px] font-bold">+2.45%</span>
@@ -447,9 +448,9 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className='bg-white rounded-[20px] w-[50%] ml-[10px] p-[20px]'>
+                <div className='bg-white dark:bg-[#111C44] rounded-[20px] w-[50%] ml-[10px] p-[20px]'>
                     <header className='flex justify-between'>
-                        <h1 className='text-[16px] text-[#2B3674] font-bold'>Your Pie Chart</h1>
+                        <h1 className='text-[16px] text-[#2B3674] dark:text-[#fff] font-bold'>Your Pie Chart</h1>
                         <div>
                             <select className=' border-0 outline-none text-[#A3AED0] text-[12px] font-bold'>
                                 <option value="daily">Daily</option>
@@ -470,24 +471,24 @@ const Dashboard = () => {
 
         <div className='flex justify-between my-[20px]'>
 
-            <div className='w-[50%] p-[20px] bg-white rounded-[20px] mr-[10px]'>
+            <div className='w-[50%] p-[20px] bg-white dark:bg-[#111C44] rounded-[20px] mr-[10px]'>
                 <div className='flex justify-between pb-[15px] items-center'>
-                    <h1 className='font-bold text-[20px] text-[#2B3674]'>Complex Table</h1>
-                    <div className='flex items-top text-[#4318FF] bg-[#F4F7FE] rounded-[7px]'><MoreHorizIcon/></div>
+                    <h1 className='font-bold text-[20px] text-[#2B3674] dark:text-[#fff]'>Complex Table</h1>
+                    <div className='flex items-top text-[#4318FF] bg-[#F4F7FE] rounded-[7px]'><MoreHorizIcon className='dark:bg-[#1B254B] dark:text-[#fff]'/></div>
                 </div>
                 <div>
                     <ComplexTable/>
                 </div>
             </div>
             <div className='w-[50%] rounded-[20px] ml-[10px] flex'>
-                <div className=' bg-white rounded-[20px] w-[50%] mr-[10px] p-[20px]'>
+                <div className=' bg-white dark:bg-[#111C44] rounded-[20px] w-[50%] mr-[10px] p-[20px]'>
                     <div className='flex justify-between'>
                         <div className='flex'>
                             <div className=' items-center'><input type="checkbox" style={{background: '#F4F7FE', width: '14px', height: '14px'}} /></div>
-                            <h1 className='text-[16px] text-[#2B3674] pt-[2px] pl-[20px] font-bold'>Tasks</h1>
+                            <h1 className='text-[16px] text-[#2B3674] dark:text-[#fff] pt-[2px] pl-[20px] font-bold'>Tasks</h1>
                         </div>
                         <div>
-                            <div className='flex items-top text-[#4318FF] bg-[#F4F7FE] rounded-[7px]'><MoreHorizIcon/></div>
+                            <div className='flex items-top text-[#4318FF] bg-[#F4F7FE] rounded-[7px]'><MoreHorizIcon className='dark:bg-[#1B254B] dark:text-[#fff]'/></div>
                         </div>
                     </div>
                     <div className='pt-[20px]'>
@@ -512,7 +513,7 @@ const Dashboard = () => {
                         }
                     </div>
                 </div>
-                <div className=' bg-white rounded-[20px] w-[50%] ml-[10px] p-[20px]'>
+                <div className=' bg-white dark:bg-[#111C44] rounded-[20px] w-[50%] ml-[10px] p-[20px]'>
                         <div>
                            <Calender/>
                         </div>
@@ -523,7 +524,7 @@ const Dashboard = () => {
 
         <div className='flex justify-between my-[20px]'>
             <div className='w-[50%] mr-[10px] flex'>
-                <div className='w-[50%] mr-[5px] bg-white rounded-[20px] p-[20px]'>
+                <div className='w-[50%] mr-[5px] bg-white dark:bg-[#111C44] rounded-[20px] p-[20px]'>
                     <div className="lesson-header flex items-center pb-[20px] pt-[5px]">
                         <div className="lesson-header-icon p-[10px] bg-[#FEEFEE] rounded-[15px]">
                             <img src={fire} alt="fire-image" />
@@ -565,17 +566,17 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className='w-[50%] ml-[5px] bg-white rounded-[20px] p-[20px]'>
+                <div className='w-[50%] ml-[5px] bg-white dark:bg-[#111C44] rounded-[20px] p-[20px]'>
                     <div className='flex justify-between items-center pb-[10px] pt-[5px]'>
-                        <h1 className='text-[#2B3674] text-[16px] font-bold'>Team members</h1>
-                        <div className='bg-[#F4F7FE] text-[#4318FF] w-[37px] h-[37px] rounded-[10px] flex items-center justify-center'><AddCircleIcon/></div>
+                        <h1 className='text-[#2B3674] dark:text-[#fff] text-[16px] font-bold'>Team members</h1>
+                        <div className='bg-[#F4F7FE] dark:bg-[#1B254B] text-[#4318FF] w-[37px] h-[37px] rounded-[10px] flex items-center justify-center'><AddCircleIcon className='dark:bg-[#1B254B] dark:text-[#fff]'/></div>
                     </div>
                     <div className='pt-[20px] flex-col'>
                         <div className='flex justify-between items-center p-2 rounded-[16px] shadow-sm mb-[7px]'>
                             <div className='flex'>
                                 <img src={teamM1} alt="avatar1" />
                                 <div>
-                                    <h1 className='font-bold text-[16px] text-[#2B3674]'>Adela Parkson</h1>
+                                    <h1 className='font-bold text-[16px] text-[#2B3674] dark:text-[#fff]'>Adela Parkson</h1>
                                     <p className='text-[#A3AED0] text-[12px] font-medium'>Creative Director</p>
                                 </div>
                             </div>
@@ -585,7 +586,7 @@ const Dashboard = () => {
                             <div className='flex'>
                                 <img src={teamM2} alt="avatar2" />
                                 <div>
-                                    <h1 className='font-bold text-[16px] text-[#2B3674]'>Christian Mad</h1>
+                                    <h1 className='font-bold text-[16px] text-[#2B3674] dark:text-[#fff]'>Christian Mad</h1>
                                     <p className='text-[#A3AED0] text-[12px] font-medium'>Product Designer</p>
                                 </div>
                             </div>
@@ -595,7 +596,7 @@ const Dashboard = () => {
                             <div className='flex'>
                                 <img src={teamM3} alt="avatar3" />
                                 <div>
-                                    <h1 className='font-bold text-[16px] text-[#2B3674]'>Jason Statham</h1>
+                                    <h1 className='font-bold text-[16px] text-[#2B3674] dark:text-[#fff]'>Jason Statham</h1>
                                     <p className='text-[#A3AED0] text-[12px] font-medium'>Junior Graphic Designer</p>
                                 </div>
                             </div>
@@ -606,10 +607,10 @@ const Dashboard = () => {
             </div>
 
             <div className='w-[50%] ml-[10px] flex'>
-                <div className='w-[50%] mr-[5px] bg-white rounded-[20px] p-[20px]'>
-                    <div className='w-[91px] h-[91px] text-[#4318FF]'><FingerprintIcon sx={{ fontSize: 90 }}/></div>
+                <div className='w-[50%] mr-[5px] bg-white dark:bg-[#111C44] rounded-[20px] p-[20px]'>
+                    <div className='w-[91px] h-[91px] text-[#4318FF] dark:text-[#fff]'><FingerprintIcon sx={{ fontSize: 90 }}/></div>
                     <div className='py-[20px]'>
-                        <h1 className='text-[24px] font-bold text-[#2B3674]'>Control card security in-app with a tap</h1>
+                        <h1 className='text-[24px] font-bold text-[#2B3674] dark:text-[#fff]'>Control card security in-app with a tap</h1>
                         <p className='text-[14px] font-medium text-[#A3AED0] py-[10px]'>Discover our cards benefits with one tap.</p>
                     </div>
                     <div className=''>
@@ -617,7 +618,7 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className='w-[50%] ml-[5px] bg-white rounded-[20px] p-[20px]'>
+                <div className='w-[50%] ml-[5px] bg-white dark:bg-[#111C44] rounded-[20px] p-[20px]'>
                     <div>
                         <img src={starbucksbg} alt="starbucks-bg" />
                     </div>
@@ -625,7 +626,7 @@ const Dashboard = () => {
                         <img src={starbucksLogo} alt="logo" />
                     </div>
                     <div className='pt-[20px]'>
-                        <h1 className='font-bold text-[24px] text-[#2B3674]'>Starbucks</h1>
+                        <h1 className='font-bold text-[24px] text-[#2B3674] dark:text-[#fff]'>Starbucks</h1>
                         <p className='text-[#A3AED0] flex items-center pt-[10px]'><FastfoodIcon/> <span className='text-[18px] font-medium pl-[5px] flex items-center'> 10% cashback & off</span></p>
                     </div>
                 </div>

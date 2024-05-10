@@ -22,7 +22,7 @@ const SideBar = () => {
   }
 
   return (
-    <div className='bg-white'>
+    <div className='SideBar'>
     <div className=' p-[30px]'>
       <h1 className=" text-[22px] font-bold font-poppins flex justify-center py-[26px]">
         HORIZON <span className="font-medium"> FREE </span>
